@@ -32,7 +32,7 @@ nav {
     display: flex;
     justify-content: space-between;
     height: 4rem;
-    padding: 0 0 0 3rem;
+    padding: 0 0 0 4rem;
     align-items: start;
     position: relative;
     z-index: 2;
@@ -120,6 +120,7 @@ nav {
     flex-direction: column;
     gap: 1.5rem;
     margin-top: 10rem;
+    margin-left: 1.7rem;
 }
 .hero h1 {
     font-size: 3.3rem;
@@ -144,4 +145,88 @@ nav {
 }
 .plus {
     margin: 0 0.2rem 0 0;
+}
+
+/* Books Section */
+
+.books {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: #c1e7c5;
+}
+
+.book-container {
+    width: 60rem;
+    height: 20rem;
+    margin-top: 7rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 3rem 3rem;
+}
+.book-summary {
+    min-width: 28rem;
+    max-width: 32rem;
+    height: 10rem;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(57, 55, 55);
+    font-size: 0.9rem;
+}
+
+.book-details {
+    display: flex;
+    max-width: 24rem;
+    font-family: "Montserrat", sans-serif;
+}
+.book-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.book-name {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+}
+.author {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.date,
+.isbn,
+.rating {
+    font-weight: 400;
+    font-size: 0.87rem;
+}
+.book-cvr-img {
+    width: 22rem;
+    height: 14rem;
+    position: relative;
+    right: 7.8rem;
+    bottom: 0.5rem;
+}
+.book-info {
+    min-width: 18rem;
+}
+.buy-read-btn-div {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+.buy-read-btn {
+    width: 7rem;
+    height: 2.3rem;
+    border: none;
+    border-radius: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+.read-more {
+    background-color: #c1e7c5;
+}
+.buy-online {
+    background-color: #000;
+    color: #fff;
 }
