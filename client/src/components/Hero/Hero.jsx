@@ -10,7 +10,7 @@ const Hero = () => {
                 <h1>
                     A place to keep <br />
                     the records of <br />
-                    <span>book</span><br />
+                    <span>book </span><br />
                     you read.
                 </h1>
                 <Link className="hero-newbook"><span>+</span> new book</Link>
