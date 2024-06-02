@@ -4,7 +4,6 @@ import "./Navbar.css"
 
 const Navbar = () => {
     const [menuToggler, setMenuToggler] = useState(false)
-    console.log(menuToggler)
     return (
         <div className="navbar">
             <div className="nav-logo">
@@ -41,7 +40,7 @@ const Navbar = () => {
             <div></div>
             <svg
                 onClick={() => setMenuToggler((prev) => !prev)}
-                className={`nav-menu-icon ${menuToggler && "nav-menu-icon-on"}`}
+                className={`nav-menu-icon `}
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
