@@ -70,6 +70,13 @@
     width: 10rem;
     height:13rem;
 }
+.notes{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 3rem;
+}
+
 
 @media (max-width:1100px){
     .books-wrap{

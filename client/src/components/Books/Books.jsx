@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import Book_Cover1 from "../../assets/images/Book_Cover1.png"
 import "./Books.css"
 
-const Books = () => {
+const Books = (props) => {
     return (
         <div className="books">
             <div className="books-wrap">
