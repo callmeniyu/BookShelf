@@ -4,6 +4,7 @@ import Hero from '../../components/Hero/Hero'
 import Books from '../../components/Books/Books'
 
 const Home = () => {
+  window.scrollTo(0,0)
   return (
     <>
       <Navbar />

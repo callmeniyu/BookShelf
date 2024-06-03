@@ -134,6 +134,9 @@
 .loginsignup-rating-field {
     padding: 0.2rem;
 }
+.loginsignup-rating-field:focus{
+    outline: none;
+}
 .loginsignup-summary-field,
 .loginsignup-notes-field {
     padding: 1rem;

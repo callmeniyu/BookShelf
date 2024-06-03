@@ -13,7 +13,7 @@ const Hero = () => {
                     <span>book </span><br />
                     you read.
                 </h1>
-                <Link className="hero-newbook"><span>+</span> new book</Link>
+                <Link className="hero-newbook" to="/login"><span>+</span> new book</Link>
             </div>
             <div className="hero-right">
                 <img src={Bookshelf_img} className="hero-bookshelf-img" alt="bookshelf img" />
