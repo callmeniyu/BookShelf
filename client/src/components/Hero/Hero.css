@@ -39,12 +39,20 @@
 }
 
 @media (max-width:1170px) {
+    .hero{
+        justify-content: center;
+    }
     .hero-bookshelf-img{
         display: none;
     }
     .hero-left{
         padding-top: 3rem;
+        padding-bottom: 4rem;
         padding-left: clamp(2rem, 10vw,10rem);
+        text-align: center;
+        align-items: center;
+        width: clamp(40rem, 70vw,60rem);
+        gap: 1.5rem;
     }
     .hero-left h1 br{
         display: none;
