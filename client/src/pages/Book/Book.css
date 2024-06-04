@@ -1,7 +1,8 @@
 .book {
     display: flex;
-    justify-content: center;
-    padding: 3rem 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0 0;
     background-color: #c1e7c5;
 }
 .book-wrap {
@@ -11,6 +12,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2rem;
 }
 .book-wrap > div {
     display: flex;

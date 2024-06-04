@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Book_Cover1 from "../../assets/images/Book_Cover1.png"
 import "./Book.css"
+import Footer from "../../components/Footer/Footer"
 const Book = () => {
     return (
         <div className="book">
@@ -52,6 +53,7 @@ const Book = () => {
 
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import React from "react"
 import "./LoginSignup.css"
+import Footer from "../../components/Footer/Footer"
 
 const LoginSignup = () => {
     return (
@@ -52,7 +53,8 @@ const LoginSignup = () => {
                     </div>
             <button type="submit" className="loginsignup-submit-btn">Submit</button>
           </form>
-            </div>
+        </div>
+        <Footer />
         </div>
     )
 }
