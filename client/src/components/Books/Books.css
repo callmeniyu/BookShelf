@@ -69,7 +69,7 @@
 }
 
 .book-cover-img{
-    margin-top: 1.5rem;
+    /* margin-top: 1rem; */
     width: 10rem;
     height:13rem;
 }
@@ -158,11 +158,27 @@
         margin-top: 2rem;
         justify-content: center;
     }
+    .books-alternative{
+        flex-direction: column;
+        align-items: center;
+    }
+    .books-alternative-right{
+        width: 100%;
+    }
+    .books-alternative-left{
+        order: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 }
 @media (max-width:400px){
     .books-details-btns{
         flex-direction: column;
         gap: 1rem;
         align-items: center;
+    }
+    .books-alternative-left img{
+        width: 16rem;
     }
 }

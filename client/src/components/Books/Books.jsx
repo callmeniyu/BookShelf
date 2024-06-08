@@ -7,7 +7,6 @@ import "./Books.css"
 
 const Books = (props) => {
     const { books } = useContext(BookContext)
-    console.log(books)
     return (
         <div className="books">
             {books.length > 0 ? (
@@ -25,7 +24,7 @@ const Books = (props) => {
                                 </div>
 
                                 <div className="books-details-btns">
-                                    <Link className="readmore-btn">
+                                    <Link to={`/book/${book.id}`} className="readmore-btn">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="24"
@@ -54,7 +53,7 @@ const Books = (props) => {
                                     </Link>
                                 </div>
                             </div>
-                            <img src={Book_Cover1} className="book-cover-img" alt="book-cvr-img" />
+                            <img src={book.img} className="book-cover-img" alt="book-cvr-img" />
                         </div>
                     </div>
                 ))

@@ -5,13 +5,12 @@ import Book from "./pages/Book/Book"
 import "./App.css"
 
 function App() {
-
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/book" element={<Book />}>
-                    <Route path=":id" element={<Book  />} />
+                    <Route path=":bookId" element={<Book />} />
                 </Route>
                 <Route path="/addbook" element={<Addbook />} />
             </Routes>

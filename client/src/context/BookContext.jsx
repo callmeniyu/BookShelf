@@ -1,17 +1,11 @@
-import React, { createContext } from "react"
+import React, { createContext, useState } from "react"
 
 export const BookContext = createContext(null)
 
 const BookContextProvider = (props) => {
-    let books = []
-    let id
+    let [books, setBooks] = useState([])
     const addBook = (book) => {
-        if (book._id > 0) {
-            book._id += 1
-        } else {
-            book._id = 1
-        }
-        books.push(book)
+        setBooks((prev)=>[...prev,book])
     }
     const contextValue = { books, addBook }
     return <BookContext.Provider value={contextValue}>{props.children}</BookContext.Provider>

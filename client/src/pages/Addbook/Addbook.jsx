@@ -4,7 +4,7 @@ import Footer from "../../components/Footer/Footer"
 import upload_area from "../../assets/upload_area.svg"
 import { BookContext } from "../../context/BookContext"
 import { Link } from "react-router-dom"
-
+import axios from "axios"
 const LoginSignup = () => {
     const [image, setImage] = useState(false)
     const { addBook } = useContext(BookContext)
@@ -26,7 +26,16 @@ const LoginSignup = () => {
         setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
     }
 
-    const submitBook = (e) => {
+    const submitBook = async(e) => {
+        const newForm = new FormData()
+        newForm.append("book", image)
+        const response = await axios.post("http://localhost:4000/upload", newForm)
+        const data = response.data
+        if (data.success) {
+            formData.img = data.img_url
+        } else {
+            console.log("Error uploading image")
+        }
         addBook(formData)
     }
 
@@ -37,7 +46,7 @@ const LoginSignup = () => {
         <div className="loginsignup">
             <div className="loginsignup-container">
                 <h3>new book</h3>
-                <form className="loginsignup-form">
+                <form className="loginsignup-form" onSubmit={(e)=>e.preventDefault()}>
                     <div className="loginsignup-name">
                         <label htmlFor="name">Name</label>
                         <input
