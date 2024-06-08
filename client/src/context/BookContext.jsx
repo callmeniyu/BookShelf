@@ -12,7 +12,6 @@ const BookContextProvider = (props) => {
             book._id = 1
         }
         books.push(book)
-        console.log(books)
     }
     const contextValue = { books, addBook }
     return <BookContext.Provider value={contextValue}>{props.children}</BookContext.Provider>
