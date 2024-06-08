@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import Book_Cover1 from "../../assets/images/Book_Cover1.png"
 import BookStack_img from "../../assets/images/bookStack_img.png"
 import { BookContext } from "../../context/BookContext"
+import Birs_vector from "../../assets/images/birds_vector.png"
 import "./Books.css"
 
 const Books = (props) => {
@@ -60,7 +61,9 @@ const Books = (props) => {
             ) : (
                 <div className="books-alternative">
                     <div className="books-alternative-left"><img src={BookStack_img} alt="" /></div>
-                    <div className="books-alternative-right"><h1>Add some books to show here</h1></div>
+                        <div className="books-alternative-right">
+                            <h1>Add some books to show here</h1>
+                        </div>
                 </div>
             )}
         </div>
