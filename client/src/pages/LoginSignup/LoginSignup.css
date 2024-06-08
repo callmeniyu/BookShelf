@@ -1,8 +1,9 @@
 .loginsignup {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3rem 0 ;
+    padding: 3rem 0  0;
     background-color: #a48ecc;
     height: 100%;
 }
@@ -12,6 +13,7 @@
     flex-direction: column;
     background-color: #c8bce0;
     border-radius: 0.8rem;
+    margin-bottom: 2rem;
 }
 .loginsignup-container > h3 {
     text-align: center;
