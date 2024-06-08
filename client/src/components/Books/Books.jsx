@@ -1,9 +1,7 @@
 import React, { useContext } from "react"
 import { Link } from "react-router-dom"
-import Book_Cover1 from "../../assets/images/Book_Cover1.png"
 import BookStack_img from "../../assets/images/bookStack_img.png"
 import { BookContext } from "../../context/BookContext"
-import Birs_vector from "../../assets/images/birds_vector.png"
 import "./Books.css"
 
 const Books = (props) => {

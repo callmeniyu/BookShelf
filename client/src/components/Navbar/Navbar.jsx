@@ -19,19 +19,7 @@ const Navbar = () => {
                     <Link className="nav-contact">Contact</Link>
                 </li>
                 <li>
-                    <Link className="nav-sortby">
-                        Sort By
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth="1.5"
-                            stroke="currentColor"
-                            className="w-6 h-6 sort-icon"
-                        >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                        </svg>
-                    </Link>
+                    <Link to="/login" className="nav-login">Login</Link>
                 </li>
                 <li>
                     <input type="text" className="search-book" placeholder="search book" />

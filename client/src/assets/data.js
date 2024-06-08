@@ -3,7 +3,7 @@ const data = [
         id: 1,
         name: "Atomic Habits",
         author: "James clear",
-        isbn_no: 10000,
+        isbn: 10000,
         date: Date.now(),
         rating: 10,
         img: "",

@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react"
 import { Link, useParams } from "react-router-dom"
-import Book_Cover1 from "../../assets/images/Book_Cover1.png"
 import "./Book.css"
 import Footer from "../../components/Footer/Footer"
 import { BookContext } from "../../context/BookContext"

@@ -1,4 +1,4 @@
-.loginsignup {
+.AddBook {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,7 +7,7 @@
     background-color: #a48ecc;
     height: 100%;
 }
-.loginsignup-container {
+.AddBook-container {
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
     border-radius: 0.8rem;
     margin-bottom: 2rem;
 }
-.loginsignup-container > h3 {
+.AddBook-container > h3 {
     text-align: center;
     background-color: #000;
     color: #fff;
@@ -24,7 +24,7 @@
     padding-top: 0.5rem;
     border-radius: 0.8rem 0.8rem 0 0;
 }
-.loginsignup-form {
+.AddBook-form {
     display: flex;
     flex-direction: column;
     padding: 0 clamp(1rem, 8vw, 6rem) 2rem;
@@ -34,128 +34,128 @@
     gap: 1rem;
 }
 
-.loginsignup-form label:nth-child(1),
-.loginsignup-form label:nth-child(3) {
+.AddBook-form label:nth-child(1),
+.AddBook-form label:nth-child(3) {
     grid-column: span 3;
 }
-.loginsignup-name,
-.loginsignup-author {
+.AddBook-name,
+.AddBook-author {
     grid-column: span 3;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
 }
-.loginsignup-name-field,
-.loginsignup-author-field {
+.AddBook-name-field,
+.AddBook-author-field {
     height: 2.5rem;
     border: none;
     padding: 1rem;
 }
-.loginsignup-date {
+.AddBook-date {
     grid-area: 3 / 3 / 4 / 4;
 }
-.loginsignup-rating {
+.AddBook-rating {
     grid-area: 4 / 1 / 5 / 2;
 }
-.loginsignup-link {
+.AddBook-link {
     grid-area: 4 / 3 / 5 / 4;
 }
-.loginsignup-isbn,
-.loginsignup-date,
-.loginsignup-rating,
-.loginsignup-link {
+.AddBook-isbn,
+.AddBook-date,
+.AddBook-rating,
+.AddBook-link {
     display: flex;
     flex-direction: column;
 }
-.loginsignup-summary {
+.AddBook-summary {
     grid-column: span 3;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-.loginsignup-notes {
+.AddBook-notes {
     grid-column: span 3;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-.loginsignup-submit-btn {grid-column: span 3;
+.AddBook-submit-btn {grid-column: span 3;
 
 }
-.loginsignup-img-field{
+.AddBook-img-field{
     grid-area: 7 / 1 / 8 / 4;
 }
-.loginsignup-img{
+.AddBook-img{
     cursor: pointer;
     width: 9rem;
     height: 10rem;
 }
-.loginsignup-name-field::placeholder,
-.loginsignup-author-field::placeholder,
-.loginsignup-isbn-field::placeholder,
-.loginsignup-date-field::placeholder,
-.loginsignup-link-field::placeholder,
-.loginsignup-summary-field::placeholder,
-.loginsignup-notes-field::placeholder {
+.AddBook-name-field::placeholder,
+.AddBook-author-field::placeholder,
+.AddBook-isbn-field::placeholder,
+.AddBook-date-field::placeholder,
+.AddBook-link-field::placeholder,
+.AddBook-summary-field::placeholder,
+.AddBook-notes-field::placeholder {
     font-family: "Montserrat", sans-serif;
 }
-.loginsignup-name-field:focus,
-.loginsignup-author-field:focus,
-.loginsignup-isbn-field:focus,
-.loginsignup-date-field:focus,
-.loginsignup-link-field:focus,
-.loginsignup-summary-field:focus,
-.loginsignup-notes-field:focus {
+.AddBook-name-field:focus,
+.AddBook-author-field:focus,
+.AddBook-isbn-field:focus,
+.AddBook-date-field:focus,
+.AddBook-link-field:focus,
+.AddBook-summary-field:focus,
+.AddBook-notes-field:focus {
     border: none;
     outline: none;
 }
-.loginsignup-date-field{
+.AddBook-date-field{
     cursor: pointer;
 }
-.loginsignup-name-field,
-.loginsignup-author-field,
-.loginsignup-isbn-field,
-.loginsignup-date-field,
-.loginsignup-link-field,
-.loginsignup-summary-field,
-.loginsignup-notes-field,
-.loginsignup-rating-field {
+.AddBook-name-field,
+.AddBook-author-field,
+.AddBook-isbn-field,
+.AddBook-date-field,
+.AddBook-link-field,
+.AddBook-summary-field,
+.AddBook-notes-field,
+.AddBook-rating-field {
     border: none;
     border-radius: 5px;
 }
-.loginsignup-isbn,
-.loginsignup-date,
-.loginsignup-rating,
-.loginsignup-link {
+.AddBook-isbn,
+.AddBook-date,
+.AddBook-rating,
+.AddBook-link {
     display: flex;
     gap: 0.7rem;
 }
-.loginsignup-isbn-field,
-.loginsignup-date-field,
-.loginsignup-rating-field,
-.loginsignup-link-field {
+.AddBook-isbn-field,
+.AddBook-date-field,
+.AddBook-rating-field,
+.AddBook-link-field {
     width: 100%;
     height: 2.5rem;
     border: none;
     padding: 1rem;
 }
-.loginsignup-date-field,
-.loginsignup-rating-field {
+.AddBook-date-field,
+.AddBook-rating-field {
     font-family: "Montserrat", sans-serif;
     color: grey;
 }
-.loginsignup-rating-field {
+.AddBook-rating-field {
     padding: 0.2rem;
 }
-.loginsignup-rating-field:focus{
+.AddBook-rating-field:focus{
     outline: none;
 }
-.loginsignup-summary-field,
-.loginsignup-notes-field {
+.AddBook-summary-field,
+.AddBook-notes-field {
     padding: 1rem;
     height: 10rem;
 }
-.loginsignup-submit-btn{
+.AddBook-submit-btn{
     width: 8rem;
     margin-left: auto;
     margin-right: auto;
@@ -174,25 +174,25 @@
 
 
 @media (max-width: 720px) {
-    .loginsignup-container {
+    .AddBook-container {
         width: 85%;
     }
-    .loginsignup-isbn {
+    .AddBook-isbn {
         grid-area: 3 / 1 / 4 / 4;
     }
-    .loginsignup-date {
+    .AddBook-date {
         grid-area: 4 / 1 / 5 / 4;
     }
-    .loginsignup-rating {
+    .AddBook-rating {
         grid-area: 5 / 1 / 6 / 4;
     }
-    .loginsignup-link {
+    .AddBook-link {
         grid-area: 6 / 1 / 7 / 4;
     }
-    .loginsignup-img-field{
+    .AddBook-img-field{
         grid-area: 10 / 1 / 11 / 4;
     }
-    .loginsignup-submit-btn {
+    .AddBook-submit-btn {
         grid-row: 11 / 12;
     }
 }

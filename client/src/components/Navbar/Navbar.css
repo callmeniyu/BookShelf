@@ -37,18 +37,14 @@
     color: black;
     font-weight: 450;
 }
-.nav-contact, .nav-sortby{
+.nav-contact, .nav-login{
     color: #fff;
 }
-.nav-sortby{
+.nav-login{
     display: flex;
-    width: 5.5rem;
+    width: 3.5rem;
 }
-.nav-sortby svg{
-    margin-left: 0.5rem;
-    width: 1.3rem;
-    height: 1.3rem;
-}
+
 
 .search-book{
     width: 10rem;
