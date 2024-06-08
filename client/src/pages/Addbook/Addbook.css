@@ -79,8 +79,16 @@
     flex-direction: column;
     gap: 0.5rem;
 }
-.loginsignup-submit-btn {
+.loginsignup-submit-btn {grid-column: span 3;
+
+}
+.loginsignup-img-field{
     grid-area: 7 / 1 / 8 / 4;
+}
+.loginsignup-img{
+    cursor: pointer;
+    width: 9rem;
+    height: 10rem;
 }
 .loginsignup-name-field::placeholder,
 .loginsignup-author-field::placeholder,
@@ -100,6 +108,9 @@
 .loginsignup-notes-field:focus {
     border: none;
     outline: none;
+}
+.loginsignup-date-field{
+    cursor: pointer;
 }
 .loginsignup-name-field,
 .loginsignup-author-field,
@@ -144,7 +155,7 @@
     padding: 1rem;
     height: 10rem;
 }
-.loginsignup-submit-btn {
+.loginsignup-submit-btn{
     width: 8rem;
     margin-left: auto;
     margin-right: auto;
@@ -156,7 +167,11 @@
     font-family: "Montserrat", sans-serif;
     font-weight: 550;
     font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
 }
+
 
 @media (max-width: 720px) {
     .loginsignup-container {
@@ -174,7 +189,10 @@
     .loginsignup-link {
         grid-area: 6 / 1 / 7 / 4;
     }
+    .loginsignup-img-field{
+        grid-area: 10 / 1 / 11 / 4;
+    }
     .loginsignup-submit-btn {
-        grid-row: 10 / 11;
+        grid-row: 11 / 12;
     }
 }

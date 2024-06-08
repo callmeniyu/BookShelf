@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "react-router-dom"
 import Bookshelf_img from "../../assets/images/Bookshelf_img.png"
+import { BookContext } from "../../context/BookContext.jsx"
 import "./Hero.css"
 
 const Hero = () => {
@@ -13,7 +14,7 @@ const Hero = () => {
                     <span>book </span><br />
                     you read.
                 </h1>
-                <Link className="hero-newbook" to="/login"><span>+</span> new book</Link>
+                <Link className="hero-newbook" to="/addbook"><span>+</span> new book</Link>
             </div>
             <div className="hero-right">
                 <img src={Bookshelf_img} className="hero-bookshelf-img" alt="bookshelf img" />
