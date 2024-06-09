@@ -50,7 +50,7 @@ const Book = () => {
                                 </Link>
                             </div>
                         </div>
-                        <img src={Book_Cover1} className="book-cover-img" alt="book-cvr-img" />
+                        <img src={book.img} className="book-cover-img" alt="book-cvr-img" />
                     </div>
                 </div>
                 <hr />
