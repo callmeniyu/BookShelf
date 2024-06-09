@@ -1,6 +1,7 @@
 import React, { useState } from "react"
+import google_icon from "../../assets/google_icon.svg"
 import "./LoginSignup.css"
-import Footer from "../../components/Footer/Footer"
+import { Link } from "react-router-dom"
 const LoginSignup = () => {
     const [state, setState] = useState("Login")
     const [checked, setChecked] = useState(true)
@@ -59,6 +60,15 @@ const LoginSignup = () => {
                 <div className="loginsignup-agree">
                     <input type="checkbox" onChange={() => setChecked((prev) => !prev)} />
                     <p>By continuing, i agree to the terms of use & privacy policy.</p>
+                </div>
+            </div>
+            <div className="loginsignup-google">
+                <span><hr/>OR<hr/></span>
+                <div className="loginsignup-google-container">
+                    <Link className="loginsignup-google-ggl">
+                        <img src={google_icon} alt="" />
+                        <h4>Sign up using Google</h4>
+                    </Link>
                 </div>
             </div>
         </div>

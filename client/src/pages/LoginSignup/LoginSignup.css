@@ -6,10 +6,10 @@
 
 .loginsignup {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0;
+    align-items: center;
+    padding:0 4rem;
     height: 100vh;
+    gap: 8rem;
     font-family: "Montserrate",sans-serif;
     background-image: url("../../assets/images/LoginSignup-bg-img.jpeg");
     background-position: center;
@@ -19,7 +19,6 @@
 
 .loginsignup-container {
     width: 43%;
-    background: transparent;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
@@ -77,11 +76,73 @@
 .loginsignup-agree input{
     cursor: pointer;
 }
+.loginsignup-google{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+.loginsignup-google>span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.loginsignup-google hr{
+    width: 7.2rem;
+    margin: 0 0.4rem;
+    border: 1.2px solid black;
+}
+.loginsignup-google-ggl{
+    display: flex;
+    gap: 1rem;
+    width: 17rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(35px);
+    text-decoration: none;
+    padding:0.9rem 0.5rem;
+    color: #000;
+    border-radius: 5px;
+}
+.loginsignup-google-ggl:hover{
+    background-color: #615EFC;
+    color: #fff;
+}
+@media (max-width:900px){
+    .loginsignup-container{
+        width: 22rem;
+    }
+    .loginsignup-google hr{
+        width: 5rem;
+    }
+    .loginsignup-google-ggl{
+        width: 12rem;
+        font-size: 1rem;
+    }
+}
 @media (max-width:700px){
     .loginsignup{
-        justify-content: unset;
+        gap: 3rem;
     }
     .loginsignup-container{
-        width: 72vw;
+        padding-top: 2rem;
+    }
+}
+@media (max-width:550px){
+    .loginsignup{
+        flex-direction: column;
+        background-size: cover;
+        height: 100%;
+        padding-bottom: 3rem;
+    }
+    .loginsignup-google hr{
+        width: 6.8rem;
+    }
+    .loginsignup-google-ggl{
+        width: 16rem;
+        font-size: 1rem;
     }
 }
