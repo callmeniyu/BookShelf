@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react"
+import React, { createContext, useEffect, useState } from "react"
 import axios from "axios"
 
 export const BookContext = createContext(null)
@@ -7,6 +7,14 @@ let id = 0
 
 const BookContextProvider = (props) => {
     let [books, setBooks] = useState([])
+
+    useEffect(() => {
+        const allBooks = async () => {
+            const response = await axios.get(`${import.meta.env.VITE_LOCAL_API}/allbooks`)
+            setBooks(response.data)
+        }
+        allBooks()
+    }, [])
     const addBook = async (book) => {
         id++
         book.id = id

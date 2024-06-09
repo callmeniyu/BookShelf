@@ -112,6 +112,11 @@ app.post("/addbook", async (req, res) => {
     console.log("Saved new book")
 });
 
+app.get("/allbooks", async(req, res) => {
+    const response = await Book.find()
+    res.json(response)
+})
+
 
 // MULTER STORAGE ENGINE
 const storage = multer.diskStorage({
