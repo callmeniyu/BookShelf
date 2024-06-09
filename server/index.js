@@ -16,10 +16,7 @@ const saltRounds = 10;
 const app = express()
 dotenv.config()
 
-
-
-
-
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -97,20 +94,21 @@ app.get("/", (req, res) => {
     res.send("Working")
 })
 app.post("/addbook", async (req, res) => {
+
     const newBook = new Book({
-        id: req.body.id,
-        name: req.body.name,
-        author: req.body.author,
-        isbn: req.body.isbn,
-        date: req.body.date,
-        rating: req.body.rating,
-        link: req.body.link,
-        summary: req.body.summary,
-        notes: req.body.notes,
-        img: req.body.img,
+        id: req.body.book.id,
+        name: req.body.book.name,
+        author: req.body.book.author,
+        isbn: req.body.book.isbn,
+        date: req.body.book.date,
+        rating: req.body.book.rating,
+        link: req.body.book.link,
+        summary: req.body.book.summary,
+        notes: req.body.book.notes,
+        img: req.body.book.img,
     })
     await newBook.save()
-    res.json({ success: "true" })
+    res.json({ success: "true", message:"Book Saved" })
     console.log("Saved new book")
 });
 

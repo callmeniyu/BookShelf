@@ -3,9 +3,11 @@ import "./Addbook.css"
 import Footer from "../../components/Footer/Footer"
 import upload_area from "../../assets/upload_area.svg"
 import { BookContext } from "../../context/BookContext"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 const AddBook = () => {
+    const navigate = useNavigate()
+
     const [image, setImage] = useState(false)
     const { addBook } = useContext(BookContext)
 
@@ -28,7 +30,7 @@ const AddBook = () => {
     const submitBook = async(e) => {
         const newForm = new FormData()
         newForm.append("book", image)
-        const response = await axios.post("http://localhost:4000/upload", newForm)
+        const response = await axios.post(`${import.meta.env.VITE_LOCAL_API}/upload`, newForm)
         const data = response.data
         console.log(data.img_url)
         if (data.success) {
@@ -37,6 +39,7 @@ const AddBook = () => {
             console.log("Error uploading image")
         }
         addBook(formData)
+        navigate("/")
     }
 
     const handleImage = (e) => {
