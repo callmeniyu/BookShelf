@@ -36,7 +36,7 @@ const Books = (props) => {
                                         </svg>{" "}
                                         Read more
                                     </Link>
-                                    <Link className="buy-online-btn">
+                                    <Link to={book.link} className="buy-online-btn">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="24"
