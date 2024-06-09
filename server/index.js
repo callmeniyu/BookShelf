@@ -12,13 +12,13 @@ import session from "express-session"
 import GoogleStrategy from "passport-google-oauth2"
 
 const port = 4000
-const saltRounds = 10;
+const saltRounds = 10
 const app = express()
 dotenv.config()
 
 app.use(cors())
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 app.use(
     session({
@@ -31,23 +31,23 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
-mongoose.connect(process.env.MONGO_URL)
+mongoose
+    .connect(process.env.MONGO_URL)
     .then(console.log("Connected to DB"))
     .catch((err) => console.log(err))
 
-
-const Book = mongoose.model("Book",{
+const Book = mongoose.model("Book", {
     id: {
         type: Number,
-        unique: true
+        unique: true,
     },
     name: {
         type: String,
-        require: true
+        require: true,
     },
     author: {
         type: String,
-        require: true
+        require: true,
     },
     isbn: {
         type: Number,
@@ -57,44 +57,44 @@ const Book = mongoose.model("Book",{
         type: String,
     },
     rating: {
-        type: Number
+        type: Number,
     },
     link: {
-        type: String
+        type: String,
     },
     summary: {
-        type: String
+        type: String,
     },
     notes: {
-        type:String
+        type: String,
     },
     img: {
-        type:String
+        type: String,
     },
 })
 
 const User = mongoose.model("User", {
     username: {
-        type:String
+        type: String,
     },
     email: {
         type: String,
-        unique: true
+        unique: true,
     },
     password: {
         type: String,
-        require: true
+        require: true,
     },
     book: {
-        type:Object
-    }
+        type: Object,
+    },
 })
 
 app.get("/", (req, res) => {
     res.send("Working")
 })
 app.post("/addbook", async (req, res) => {
-
+    console.log(req.body)
     const newBook = new Book({
         id: req.body.book.id,
         name: req.body.book.name,
@@ -108,15 +108,19 @@ app.post("/addbook", async (req, res) => {
         img: req.body.book.img,
     })
     await newBook.save()
-    res.json({ success: "true", message:"Book Saved" })
+    res.json({ success: "true", message: "Book Saved" })
     console.log("Saved new book")
-});
+})
 
-app.get("/allbooks", async(req, res) => {
+app.get("/allbooks", async (req, res) => {
     const response = await Book.find()
     res.json(response)
 })
 
+app.post("/removebook", async (req, res) => {
+    const response = await Book.findOneAndDelete({ id: req.body.bookId })
+    res.json({succes:true, message:`${response.name} deleted`})
+})
 
 // MULTER STORAGE ENGINE
 const storage = multer.diskStorage({
@@ -140,17 +144,18 @@ app.post("/upload", upload.single("book"), (req, res) => {
 app.post("/login", (req, res) => {
     passport.authenticate("local", (err, user, info) => {
         if (err) {
-            return res.status(500).json({message:"Error occured in logging-in"})
-        } if (!user) {
-            return res.status(401).json({message:info.message})
+            return res.status(500).json({ message: "Error occured in logging-in" })
+        }
+        if (!user) {
+            return res.status(401).json({ message: info.message })
         }
         req.logIn(user, (err) => {
             if (err) {
                 return res.status(500).json({ message: "Error occured while authenticating" })
             }
             return res.status(200).json({ message: req.session })
-        });
-    })(req,res)
+        })
+    })(req, res)
 })
 
 app.post("/signup", async (req, res) => {
@@ -169,7 +174,7 @@ app.post("/signup", async (req, res) => {
                     const user = new User({
                         username: username,
                         email: email,
-                        password: hash
+                        password: hash,
                     })
                     await user.save()
                     console.log(`${username} saved to Users DB`)
@@ -185,23 +190,24 @@ app.post("/signup", async (req, res) => {
     } catch (error) {
         console.log(error)
     }
-});
+})
 
-passport.use("local",
-    new LocalStrategy({usernameField: 'email'},async function verify(email, password, cb) {
+passport.use(
+    "local",
+    new LocalStrategy({ usernameField: "email" }, async function verify(email, password, cb) {
         try {
             const user = await User.findOne({ email: email })
             if (user) {
                 const storedPassword = user.password
-                brcypt.compare(password, storedPassword, (err, valid)=> {
+                brcypt.compare(password, storedPassword, (err, valid) => {
                     if (err) {
                         console.log("Error comparing passwords")
                         return cb(err)
                     } else {
                         if (valid) {
-                            return cb(null,user)
+                            return cb(null, user)
                         } else {
-                            return cb(null, false,{message:"Incorrect password"})
+                            return cb(null, false, { message: "Incorrect password" })
                         }
                     }
                 })

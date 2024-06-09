@@ -4,9 +4,16 @@ import "./Book.css"
 import Footer from "../../components/Footer/Footer"
 import { BookContext } from "../../context/BookContext"
 const Book = () => {
-    const {bookId} = useParams()
-    const { books } = useContext(BookContext)
+    const { bookId } = useParams()
+    const { books, removeBook } = useContext(BookContext)
     const book = books.find((particularbook) => particularbook.id == bookId)
+
+    const handleRemove = (bookId) => {
+        removeBook(bookId)
+        alert(`${book.name} removed`)
+        window.location.href="/"
+    }
+
     return (
         <div className="book">
             <div className="book-wrap">
@@ -15,11 +22,11 @@ const Book = () => {
                     <div className="book-right">
                         <div>
                             <div className="book-details">
-                                <h1>{ book.name}</h1>
-                                <h2>{ book.author}</h2>
-                                <p>{ book.date}</p>
-                                <p>{ book.isbn}</p>
-                                <p>{ book.rating}/10</p>
+                                <h1>{book.name}</h1>
+                                <h2>{book.author}</h2>
+                                <p>{book.date}</p>
+                                <p>{book.isbn}</p>
+                                <p>{book.rating}/10</p>
                             </div>
 
                             <div className="book-details-btns">
@@ -36,7 +43,7 @@ const Book = () => {
                                     </svg>
                                     Edit Book
                                 </Link>
-                                <Link className="buy-online-btn">
+                                <Link className="buy-online-btn" onClick={() => handleRemove(book.id)}>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="24"
@@ -56,7 +63,7 @@ const Book = () => {
                 <hr />
                 <div className="book-notes">
                     <h3>my notes </h3>
-                    <div className="book-notes-list">{ book.notes}</div>
+                    <div className="book-notes-list">{book.notes}</div>
                     <hr />
                     <Link to="/" type="submit" className="backto-home-btn">
                         Back to Home

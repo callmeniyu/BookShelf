@@ -3,13 +3,12 @@ import "./Addbook.css"
 import Footer from "../../components/Footer/Footer"
 import upload_area from "../../assets/upload_area.svg"
 import { BookContext } from "../../context/BookContext"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import axios from "axios"
 const AddBook = () => {
-    const navigate = useNavigate()
-
     const [image, setImage] = useState(false)
     const { addBook } = useContext(BookContext)
+
 
     const [formData, setFormData] = useState({
         name: "",
@@ -39,7 +38,9 @@ const AddBook = () => {
             console.log("Error uploading image")
         }
         addBook(formData)
-        navigate("/")
+        alert("Book added")
+        window.location.href = "/"
+
     }
 
     const handleImage = (e) => {
@@ -149,7 +150,7 @@ const AddBook = () => {
                         </label>
                         <input type="file" onChange={handleImage} name="image" id="file-input" hidden />
                     </div>
-                    <Link to="/" className="AddBook-submit-btn" onClick={() => submitBook()}>
+                    <Link className="AddBook-submit-btn" onClick={() => submitBook()}>
                         Submit
                     </Link>
                 </form>
